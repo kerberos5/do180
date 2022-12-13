@@ -1,0 +1,16 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: apache-basic-svc
+  labels:
+    app: apache-basic
+spec:
+  ports:
+  - protocol: TCP
+    name: port8080
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: apache-basic
+    tier: frontend
+  type: LoadBalancer    
